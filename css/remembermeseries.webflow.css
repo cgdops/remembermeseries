@@ -3342,6 +3342,10 @@ figure {
   padding-top: 0;
 }
 
+.u-hidden {
+  display: none;
+}
+
 @media screen and (max-width: 479px) {
   .u-max-width-full {
     max-width: 100%;
