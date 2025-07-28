@@ -2170,8 +2170,8 @@ figure {
 }
 
 .form_main_layout {
-  grid-column-gap: var(--_spacing---space--6);
-  grid-row-gap: var(--_spacing---space--6);
+  grid-column-gap: var(--_spacing---space--1);
+  grid-row-gap: var(--_spacing---space--1);
   flex-flow: column;
   justify-content: flex-start;
   align-items: flex-start;
