@@ -3342,10 +3342,6 @@ figure {
   display: block;
 }
 
-.image.logo {
-  width: 50%;
-}
-
 @media screen and (max-width: 479px) {
   .u-max-width-full {
     max-width: 100%;
