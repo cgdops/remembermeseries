@@ -3301,10 +3301,6 @@ figure {
   color: var(--_theme---text);
 }
 
-.section_content_featured.u-grid-autofit {
-  --_column-count---value: 3;
-}
-
 .section_content_preview {
   aspect-ratio: 3 / 2;
 }
@@ -3334,16 +3330,20 @@ figure {
   padding-top: 70px;
 }
 
-.section_content_layout.u-grid-autofit {
-  --_column-count---value: 12;
-}
-
 .body_landing {
   padding-top: 0;
 }
 
 .u-hidden {
   display: none;
+}
+
+.image {
+  display: block;
+}
+
+.image.logo {
+  width: 50%;
 }
 
 @media screen and (max-width: 479px) {
