@@ -2331,8 +2331,6 @@ figure {
 }
 
 .page_main {
-  padding-top: var(--site--margin);
-  padding-bottom: var(--site--margin);
   flex-flow: column;
   flex: 1;
   display: flex;
@@ -3098,6 +3096,11 @@ figure {
   --_theme---button-secondary--text-hover: var(--_theme---background);
 }
 
+.section_wrap.u-section {
+  justify-content: center;
+  align-items: stretch;
+}
+
 .button_link_wrap {
   border-bottom: var(--border-width--main) solid var(--_theme---text-link--border);
   color: var(--_theme---text-link--text);
@@ -3225,7 +3228,7 @@ figure {
   --_theme---button-secondary--background-hover: var(--_theme---text);
   --_theme---button-secondary--border-hover: var(--_theme---button-secondary--background-hover);
   --_theme---button-secondary--text-hover: var(--_theme---background);
-  position: absolute;
+  position: relative;
   inset: 0% 0% auto;
 }
 
