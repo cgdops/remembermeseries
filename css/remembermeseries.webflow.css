@@ -3541,7 +3541,10 @@ figure {
 
 .portrait_video {
   aspect-ratio: 2 / 3;
-  max-height: 100svh;
+  width: auto;
+  max-height: 80svh;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 @media screen and (max-width: 767px) {
@@ -3554,6 +3557,10 @@ figure {
   .u-max-width-full {
     max-width: 100%;
   }
+}
+
+#w-node-_9159667a-e89d-7754-563a-38ba0e86d6ab-0e86d69f {
+  justify-self: center;
 }
 
 
