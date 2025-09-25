@@ -44,10 +44,10 @@
   --swatch--transparent: transparent;
   --_button-style---border: var(--_theme---button-primary--border);
   --_button-style---background: var(--_theme---button-primary--background);
-  --_button-style---text: var(--_theme---button-primary--text);
+  --_button-style---text-hover: var(--_theme---button-primary--text-hover);
   --_button-style---border-hover: var(--_theme---button-primary--border-hover);
   --_button-style---background-hover: var(--_theme---button-primary--background-hover);
-  --_button-style---text-hover: var(--_theme---button-primary--text-hover);
+  --_button-style---text: var(--_theme---button-primary--text);
   --_theme---text-link--border: var(--_theme---border);
   --_theme---text-link--text: var(--_theme---text);
   --_theme---text-link--border-hover: var(--_theme---text);
@@ -112,6 +112,12 @@
   --_typography---text-transform--lowercase: lowercase;
 }
 
+.w-backgroundvideo-backgroundvideoplaypausebutton:focus-visible {
+  outline-offset: 2px;
+  border-radius: 50%;
+  outline: 2px solid #3b79c3;
+}
+
 .w-layout-blockcontainer {
   max-width: 940px;
   margin-left: auto;
@@ -140,7 +146,6 @@ body {
   font-weight: var(--_text-style---font-weight);
   letter-spacing: var(--_text-style---letter-spacing);
   text-transform: var(--_text-style---text-transform, none);
-  padding-top: 100px;
 }
 
 h1, h2, h3, h4, h5, h6, p {
@@ -2157,6 +2162,10 @@ figure {
   width: 100%;
 }
 
+.form_main_label_text {
+  display: none;
+}
+
 .form_main_wrap {
   width: 100%;
   margin-bottom: 0;
@@ -2173,9 +2182,16 @@ figure {
   grid-column-gap: var(--_spacing---space--1);
   grid-row-gap: var(--_spacing---space--1);
   flex-flow: column;
+  flex: 1;
   justify-content: flex-start;
   align-items: flex-start;
+  width: 100%;
   display: flex;
+}
+
+.form_main_layout.centered {
+  justify-content: center;
+  align-items: center;
 }
 
 .form_main_error_wrap {
@@ -2214,6 +2230,7 @@ figure {
   border-radius: 0;
   outline-style: none;
   width: 100%;
+  max-width: 36rem;
   height: 3rem;
   margin-bottom: 0;
   padding: 0;
@@ -2242,15 +2259,15 @@ figure {
   border: var(--border-width--main) solid var(--_button-style---border);
   border-radius: var(--radius--small);
   background-color: var(--_button-style---background);
-  color: var(--_button-style---text);
+  color: var(--_button-style---text-hover);
   text-align: center;
   vertical-align: middle;
   --_button-style---border: var(--_theme---button-primary--border);
   --_button-style---background: var(--_theme---button-primary--background);
-  --_button-style---text: var(--_theme---button-primary--text);
+  --_button-style---text-hover: var(--_theme---button-primary--text-hover);
   --_button-style---border-hover: var(--_theme---button-primary--border-hover);
   --_button-style---background-hover: var(--_theme---button-primary--background-hover);
-  --_button-style---text-hover: var(--_theme---button-primary--text-hover);
+  --_button-style---text: var(--_theme---button-primary--text);
   justify-content: center;
   align-items: center;
   padding: .75rem 1.5rem;
@@ -2261,12 +2278,13 @@ figure {
 }
 
 .button_main_wrap:where(.w-variant-e85564cd-af30-a478-692b-71732aefb3ab) {
+  color: var(--_button-style---border-hover);
   --_button-style---border: var(--_theme---button-secondary--border);
   --_button-style---background: var(--_theme---button-secondary--background);
-  --_button-style---text: var(--_theme---button-secondary--text);
+  --_button-style---text-hover: var(--_theme---button-secondary--text-hover);
   --_button-style---border-hover: var(--_theme---button-secondary--border-hover);
   --_button-style---background-hover: var(--_theme---button-secondary--background-hover);
-  --_button-style---text-hover: var(--_theme---button-secondary--text-hover);
+  --_button-style---text: var(--_theme---button-secondary--text);
 }
 
 .button_main_wrap:hover {
@@ -2290,10 +2308,10 @@ figure {
   vertical-align: middle;
   --_button-style---border: var(--_theme---button-primary--border);
   --_button-style---background: var(--_theme---button-primary--background);
-  --_button-style---text: var(--_theme---button-primary--text);
+  --_button-style---text-hover: var(--_theme---button-primary--text-hover);
   --_button-style---border-hover: var(--_theme---button-primary--border-hover);
   --_button-style---background-hover: var(--_theme---button-primary--background-hover);
-  --_button-style---text-hover: var(--_theme---button-primary--text-hover);
+  --_button-style---text: var(--_theme---button-primary--text);
   justify-content: center;
   align-items: center;
   width: 5rem;
@@ -2305,10 +2323,10 @@ figure {
 .button_toggle_wrap:where(.w-variant-ab355ea0-b722-2f23-3507-f0290f710e57) {
   --_button-style---border: var(--_theme---button-secondary--border);
   --_button-style---background: var(--_theme---button-secondary--background);
-  --_button-style---text: var(--_theme---button-secondary--text);
+  --_button-style---text-hover: var(--_theme---button-secondary--text-hover);
   --_button-style---border-hover: var(--_theme---button-secondary--border-hover);
   --_button-style---background-hover: var(--_theme---button-secondary--background-hover);
-  --_button-style---text-hover: var(--_theme---button-secondary--text-hover);
+  --_button-style---text: var(--_theme---button-secondary--text);
 }
 
 .button_toggle_wrap:hover {
@@ -3096,6 +3114,162 @@ figure {
   --_theme---button-secondary--text-hover: var(--_theme---background);
 }
 
+.section_wrap:where(.w-variant-161488a1-6d53-f4e7-901f-469ece868657) {
+  --_theme---background: var(--swatch--light-100);
+  --_theme---text: var(--swatch--dark-900);
+  --_theme---heading-accent: var(--swatch--brand-600);
+  --_theme---background-2: var(--swatch--light-200);
+  --_theme---border: var(--swatch--dark-900-o20);
+  --_theme---text-link--border: var(--_theme---border);
+  --_theme---text-link--text: var(--_theme---text);
+  --_theme---text-link--border-hover: var(--_theme---text);
+  --_theme---text-link--text-hover: var(--_theme---text-link--text);
+  --_theme---selection--background: var(--swatch--brand-300);
+  --_theme---selection--text: var(--swatch--brand-text);
+  --_theme---button-primary--background: var(--swatch--brand-500);
+  --_theme---button-primary--border: var(--_theme---button-primary--background);
+  --_theme---button-primary--text: var(--swatch--brand-text);
+  --_theme---button-primary--background-hover: var(--_theme---text);
+  --_theme---button-primary--border-hover: var(--_theme---button-primary--background-hover);
+  --_theme---button-primary--text-hover: var(--_theme---background);
+  --_theme---button-secondary--background: var(--swatch--transparent);
+  --_theme---button-secondary--border: var(--_theme---border);
+  --_theme---button-secondary--text: var(--_theme---text);
+  --_theme---button-secondary--background-hover: var(--_theme---text);
+  --_theme---button-secondary--border-hover: var(--_theme---button-secondary--background-hover);
+  --_theme---button-secondary--text-hover: var(--_theme---background);
+}
+
+.section_wrap:where(.w-variant-161488a1-6d53-f4e7-901f-469ece868658) {
+  --_theme---background: var(--swatch--dark-900);
+  --_theme---text: var(--swatch--light-100);
+  --_theme---heading-accent: var(--swatch--brand-500);
+  --_theme---background-2: var(--swatch--dark-800);
+  --_theme---border: var(--swatch--light-100-o20);
+  --_theme---text-link--border: var(--_theme---border);
+  --_theme---text-link--text: var(--_theme---text);
+  --_theme---text-link--border-hover: var(--swatch--brand-500);
+  --_theme---text-link--text-hover: var(--_theme---text-link--text);
+  --_theme---selection--background: var(--swatch--brand-300);
+  --_theme---selection--text: var(--swatch--brand-text);
+  --_theme---button-primary--background: var(--swatch--brand-500);
+  --_theme---button-primary--border: var(--_theme---button-primary--background);
+  --_theme---button-primary--text: var(--swatch--brand-text);
+  --_theme---button-primary--background-hover: var(--_theme---text);
+  --_theme---button-primary--border-hover: var(--_theme---button-primary--background-hover);
+  --_theme---button-primary--text-hover: var(--_theme---background);
+  --_theme---button-secondary--background: var(--swatch--transparent);
+  --_theme---button-secondary--border: var(--_theme---border);
+  --_theme---button-secondary--text: var(--_theme---text);
+  --_theme---button-secondary--background-hover: var(--_theme---text);
+  --_theme---button-secondary--border-hover: var(--_theme---button-secondary--background-hover);
+  --_theme---button-secondary--text-hover: var(--_theme---background);
+}
+
+.section_wrap:where(.w-variant-161488a1-6d53-f4e7-901f-469ece868659) {
+  --_theme---background: var(--swatch--brand-500);
+  --_theme---text: var(--swatch--brand-text);
+  --_theme---heading-accent: color-mix(in srgb, var(--_theme---text), white 20%);
+  --_theme---background-2: var(--swatch--brand-600);
+  --_theme---border: var(--swatch--brand-text-o20);
+  --_theme---text-link--border: var(--_theme---border);
+  --_theme---text-link--text: var(--_theme---text);
+  --_theme---text-link--border-hover: var(--_theme---text);
+  --_theme---text-link--text-hover: var(--_theme---text-link--text);
+  --_theme---selection--background: var(--swatch--brand-300);
+  --_theme---selection--text: var(--swatch--brand-text);
+  --_theme---button-primary--background: var(--swatch--brand-text);
+  --_theme---button-primary--border: var(--_theme---button-primary--background);
+  --_theme---button-primary--text: var(--swatch--brand-500);
+  --_theme---button-primary--background-hover: color-mix(in srgb, var(--_theme---button-primary--background), white 10%);
+  --_theme---button-primary--border-hover: var(--_theme---button-primary--background-hover);
+  --_theme---button-primary--text-hover: var(--_theme---button-primary--text);
+  --_theme---button-secondary--background: var(--swatch--transparent);
+  --_theme---button-secondary--border: var(--_theme---border);
+  --_theme---button-secondary--text: var(--_theme---text);
+  --_theme---button-secondary--background-hover: var(--_theme---text);
+  --_theme---button-secondary--border-hover: var(--_theme---button-secondary--background-hover);
+  --_theme---button-secondary--text-hover: var(--_theme---background);
+}
+
+.section_wrap:where(.w-variant-0a8130a1-8d0c-78ae-ea13-def73b3d37be) {
+  --_theme---background: var(--swatch--light-100);
+  --_theme---text: var(--swatch--dark-900);
+  --_theme---heading-accent: var(--swatch--brand-600);
+  --_theme---background-2: var(--swatch--light-200);
+  --_theme---border: var(--swatch--dark-900-o20);
+  --_theme---text-link--border: var(--_theme---border);
+  --_theme---text-link--text: var(--_theme---text);
+  --_theme---text-link--border-hover: var(--_theme---text);
+  --_theme---text-link--text-hover: var(--_theme---text-link--text);
+  --_theme---selection--background: var(--swatch--brand-300);
+  --_theme---selection--text: var(--swatch--brand-text);
+  --_theme---button-primary--background: var(--swatch--brand-500);
+  --_theme---button-primary--border: var(--_theme---button-primary--background);
+  --_theme---button-primary--text: var(--swatch--brand-text);
+  --_theme---button-primary--background-hover: var(--_theme---text);
+  --_theme---button-primary--border-hover: var(--_theme---button-primary--background-hover);
+  --_theme---button-primary--text-hover: var(--_theme---background);
+  --_theme---button-secondary--background: var(--swatch--transparent);
+  --_theme---button-secondary--border: var(--_theme---border);
+  --_theme---button-secondary--text: var(--_theme---text);
+  --_theme---button-secondary--background-hover: var(--_theme---text);
+  --_theme---button-secondary--border-hover: var(--_theme---button-secondary--background-hover);
+  --_theme---button-secondary--text-hover: var(--_theme---background);
+}
+
+.section_wrap:where(.w-variant-0a8130a1-8d0c-78ae-ea13-def73b3d37bf) {
+  --_theme---background: var(--swatch--dark-900);
+  --_theme---text: var(--swatch--light-100);
+  --_theme---heading-accent: var(--swatch--brand-500);
+  --_theme---background-2: var(--swatch--dark-800);
+  --_theme---border: var(--swatch--light-100-o20);
+  --_theme---text-link--border: var(--_theme---border);
+  --_theme---text-link--text: var(--_theme---text);
+  --_theme---text-link--border-hover: var(--swatch--brand-500);
+  --_theme---text-link--text-hover: var(--_theme---text-link--text);
+  --_theme---selection--background: var(--swatch--brand-300);
+  --_theme---selection--text: var(--swatch--brand-text);
+  --_theme---button-primary--background: var(--swatch--brand-500);
+  --_theme---button-primary--border: var(--_theme---button-primary--background);
+  --_theme---button-primary--text: var(--swatch--brand-text);
+  --_theme---button-primary--background-hover: var(--_theme---text);
+  --_theme---button-primary--border-hover: var(--_theme---button-primary--background-hover);
+  --_theme---button-primary--text-hover: var(--_theme---background);
+  --_theme---button-secondary--background: var(--swatch--transparent);
+  --_theme---button-secondary--border: var(--_theme---border);
+  --_theme---button-secondary--text: var(--_theme---text);
+  --_theme---button-secondary--background-hover: var(--_theme---text);
+  --_theme---button-secondary--border-hover: var(--_theme---button-secondary--background-hover);
+  --_theme---button-secondary--text-hover: var(--_theme---background);
+}
+
+.section_wrap:where(.w-variant-0a8130a1-8d0c-78ae-ea13-def73b3d37c0) {
+  --_theme---background: var(--swatch--brand-500);
+  --_theme---text: var(--swatch--brand-text);
+  --_theme---heading-accent: color-mix(in srgb, var(--_theme---text), white 20%);
+  --_theme---background-2: var(--swatch--brand-600);
+  --_theme---border: var(--swatch--brand-text-o20);
+  --_theme---text-link--border: var(--_theme---border);
+  --_theme---text-link--text: var(--_theme---text);
+  --_theme---text-link--border-hover: var(--_theme---text);
+  --_theme---text-link--text-hover: var(--_theme---text-link--text);
+  --_theme---selection--background: var(--swatch--brand-300);
+  --_theme---selection--text: var(--swatch--brand-text);
+  --_theme---button-primary--background: var(--swatch--brand-text);
+  --_theme---button-primary--border: var(--_theme---button-primary--background);
+  --_theme---button-primary--text: var(--swatch--brand-500);
+  --_theme---button-primary--background-hover: color-mix(in srgb, var(--_theme---button-primary--background), white 10%);
+  --_theme---button-primary--border-hover: var(--_theme---button-primary--background-hover);
+  --_theme---button-primary--text-hover: var(--_theme---button-primary--text);
+  --_theme---button-secondary--background: var(--swatch--transparent);
+  --_theme---button-secondary--border: var(--_theme---border);
+  --_theme---button-secondary--text: var(--_theme---text);
+  --_theme---button-secondary--background-hover: var(--_theme---text);
+  --_theme---button-secondary--border-hover: var(--_theme---button-secondary--background-hover);
+  --_theme---button-secondary--text-hover: var(--_theme---background);
+}
+
 .section_wrap.u-section {
   justify-content: center;
   align-items: stretch;
@@ -3277,8 +3451,12 @@ figure {
   --_theme---button-secondary--text-hover: var(--_theme---background);
 }
 
+.hero_main_contain.u-container-small {
+  max-width: var(--max-width--main);
+}
+
 .hero_main_layout.u-grid-autofit {
-  --_gap---size: var(--_spacing---space--8);
+  --_gap---size: var(--_spacing---space--4);
 }
 
 .hero_main_visual_wrap {
@@ -3306,6 +3484,8 @@ figure {
 
 .section_content_preview {
   aspect-ratio: 3 / 2;
+  width: 100%;
+  height: auto;
 }
 
 .section_content_text {
@@ -3343,6 +3523,31 @@ figure {
 
 .image {
   display: block;
+}
+
+.form_newsletter_cta {
+  flex-flow: column;
+  justify-content: center;
+  align-items: stretch;
+  max-width: 36rem;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+}
+
+.hide {
+  display: none;
+}
+
+.portrait_video {
+  aspect-ratio: 2 / 3;
+  max-height: 100svh;
+}
+
+@media screen and (max-width: 767px) {
+  .section_layout.u-grid-autofit, .hero_main_layout.u-grid-autofit {
+    --_column-count---value: 1;
+  }
 }
 
 @media screen and (max-width: 479px) {
