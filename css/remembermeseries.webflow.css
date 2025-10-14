@@ -112,6 +112,15 @@
   --_typography---text-transform--lowercase: lowercase;
 }
 
+.w-layout-grid {
+  grid-row-gap: 16px;
+  grid-column-gap: 16px;
+  grid-template-rows: auto auto;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-columns: 1fr;
+  display: grid;
+}
+
 .w-layout-blockcontainer {
   max-width: 940px;
   margin-left: auto;
@@ -2224,7 +2233,7 @@ figure {
   border-radius: 0;
   outline-style: none;
   width: 100%;
-  max-width: 36rem;
+  max-width: 46rem;
   height: 3rem;
   margin-bottom: 0;
   padding: 0;
@@ -3617,6 +3626,10 @@ figure {
 
 .code-embed {
   display: none;
+}
+
+.grid {
+  width: 100%;
 }
 
 @media screen and (max-width: 767px) {
