@@ -3628,7 +3628,7 @@ figure {
   display: none;
 }
 
-.grid {
+.grid, .header_video {
   width: 100%;
 }
 
