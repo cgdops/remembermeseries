@@ -1,4 +1,4 @@
-<!DOCTYPE html><!--  This site was created in Webflow. https://webflow.com  --><!--  Last Published: Fri Nov 07 2025 16:09:02 GMT+0000 (Coordinated Universal Time)  -->
+<!DOCTYPE html><!--  This site was created in Webflow. https://webflow.com  --><!--  Last Published: Fri Nov 07 2025 16:29:51 GMT+0000 (Coordinated Universal Time)  -->
 <html data-wf-page="686e85313107e21980ac8564" data-wf-site="686e85303107e21980ac84f4" lang="en">
 <head>
   <meta charset="utf-8">
@@ -447,13 +447,8 @@ html.wf-design-mode .guide_wrap {
                   </div>
                   <div class="form_newsletter_cta w-form">
                     <form id="wf-form-newsletterFormCTA" name="wf-form-newsletterFormCTA" data-name="newsletterFormCTA" redirect="/thank-you" data-redirect="/thank-you" action="https://n8n.srv1051492.hstgr.cloud/webhook/7c7c3a5f-978d-43ae-bb5b-b3fbe0ec6e3e" method="post" class="form_main_layout centered" data-wf-page-id="686e85313107e21980ac8564" data-wf-element-id="9094e0bc-560e-443e-04a5-c521e002a651">
-                      <div class="w-layout-grid grid"><input class="form_main_field u-alignment-center w-input" maxlength="256" name="FNAME" data-name="FNAME" placeholder="Enter your first name..." type="text" id="FNAME" required=""><input class="form_main_field u-alignment-center w-input" maxlength="256" name="LNAME" data-name="LNAME" placeholder="Enter your last name..." type="text" id="LNAME" required=""></div><input class="form_main_field u-alignment-center w-input" maxlength="256" name="EMAIL" data-name="EMAIL" placeholder="Enter your email..." type="email" id="EMAIL" required="">
-                      <div class="w-embed">
-                        <div aria-hidden="true" style="position: absolute; left: -5000px;">
-                          /* real people should not fill this in and expect good things - do not remove this or risk form bot signups */
-                          <input type="text" name="b_ab9363cefad9227bcca6421f3_3c3eba4461" tabindex="-1" value="">
-                        </div>
-                      </div><input type="submit" data-wait="Please wait..." class="button_main_wrap w-button" value="Get the Free 5-Day Devotional">
+                      <div style="position: absolute; left: -5000px;&quot;" aria-hidden="true"><label for="website-field">website</label><input type="text" name="website_field" id="website-field" tabindex="-1" autocomplete="off"></div>
+                      <div class="w-layout-grid grid"><input class="form_main_field u-alignment-center w-input" maxlength="256" name="FNAME" data-name="FNAME" placeholder="Enter your first name..." type="text" id="FNAME" required=""><input class="form_main_field u-alignment-center w-input" maxlength="256" name="LNAME" data-name="LNAME" placeholder="Enter your last name..." type="text" id="LNAME" required=""></div><input class="form_main_field u-alignment-center w-input" maxlength="256" name="EMAIL" data-name="EMAIL" placeholder="Enter your email..." type="email" id="EMAIL" required=""><input type="submit" data-wait="Please wait..." class="button_main_wrap w-button" value="Get the Free 5-Day Devotional">
                     </form>
                     <div class="w-form-done">
                       <div>Thank you! Your submission has been received!</div>
@@ -553,24 +548,31 @@ html.wf-design-mode .guide_wrap {
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css">
   <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
   <script>
-// Wait for the document to be fully loaded
 document.addEventListener("DOMContentLoaded", function() {
-  // Find your form by its ID
-  var form = document.getElementById("wf-form-newsletterFormHEAD");
-  form.addEventListener("submit", function(event) {
-    // Find the value of your single honeypot field
-    var honeypot = document.getElementById("website-field").value;
-    // Check if the honeypot field has a value
-    if (honeypot) {
-      // If it does, it's a bot. Stop the form submission.
-      event.preventDefault();
-      // Optional: You can "silently" fail or redirect to the thank-you page
-      // anyway, so the bot *thinks* it succeeded.
-      // window.location.href = "/thank-you"; 
-    }
-    // If the field is empty, the script does nothing,
-    // and the form submits normally to your n8n webhook.
-  });
+  // --- Protection for the FIRST form (Hero) ---
+  var formHead = document.getElementById("wf-form-newsletterFormHEAD");
+  if (formHead) {
+    formHead.addEventListener("submit", function(event) {
+      // Find the honeypot *inside this specific form* by its name
+      var honeypot = formHead.querySelector("input[name='website_field']").value;
+      // If the honeypot is filled, stop the form
+      if (honeypot) {
+        event.preventDefault(); 
+      }
+    });
+  }
+  // --- Protection for the SECOND form (CTA) ---
+  var formCta = document.getElementById("wf-form-newsletterFormCTA");
+  if (formCta) {
+    formCta.addEventListener("submit", function(event) {
+      // Find the honeypot *inside this specific form* by its name
+      var honeypot = formCta.querySelector("input[name='website_field']").value;
+      // If the honeypot is filled, stop the form
+      if (honeypot) {
+        event.preventDefault();
+      }
+    });
+  }
 });
 </script>
   <script>
