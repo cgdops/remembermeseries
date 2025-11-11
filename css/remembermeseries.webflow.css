@@ -3664,6 +3664,14 @@ figure {
   .u-max-width-full {
     max-width: 100%;
   }
+
+  .section_content_poster_wrapper {
+    width: 100%;
+  }
+
+  .link-block {
+    display: block;
+  }
 }
 
 #w-node-_9159667a-e89d-7754-563a-38ba0e86d6ab-0e86d69f {
