@@ -3654,6 +3654,18 @@ figure {
   margin-bottom: .5rem;
 }
 
+.italic {
+  font-style: italic;
+}
+
+.disclaimer-text {
+  max-width: 32rem;
+}
+
+.disclaimer-text.italic.u-text-style-small {
+  margin-top: 5px;
+}
+
 @media screen and (max-width: 767px) {
   .section_layout.u-grid-autofit, .hero_main_layout.u-grid-autofit {
     --_column-count---value: 1;
