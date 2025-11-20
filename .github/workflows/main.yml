@@ -14,8 +14,8 @@
             with:
               fetch-depth: 0 # Required for accurate <lastmod> tags
 
-          - name: Generate Sitemap
-            uses: cicirello/generate-sitemap@v2.1.0
+          - name: generate-sitemap
+            uses: cicirello/generate-sitemap@v1.10.4
             with:
               base-url: "https://cgdops.github.io/remembermeseries/" # Replace with your GitHub Pages URL
 
