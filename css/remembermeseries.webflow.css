@@ -3667,7 +3667,17 @@ figure {
 }
 
 @media screen and (max-width: 767px) {
-  .section_layout.u-grid-autofit, .hero_main_layout.u-grid-autofit {
+  .section_layout.u-grid-autofit {
+    --_column-count---value: 1;
+  }
+
+  .nav_contain.u-container {
+    text-align: center;
+    flex-flow: wrap;
+    justify-content: center;
+  }
+
+  .hero_main_layout.u-grid-autofit {
     --_column-count---value: 1;
   }
 }
